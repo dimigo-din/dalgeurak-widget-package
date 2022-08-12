@@ -31,6 +31,6 @@ class ReasonTextField extends StatelessWidget {
           hintStyle: reasonTextField.copyWith(color: dalgeurakGrayTwo),
         ),
       ),
-    )
+    );
   }
 }
