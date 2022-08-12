@@ -43,7 +43,7 @@ class DalgeurakCheckBox extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         SvgPicture.asset(
-          "assets/images/icons/checkBox${checkBoxType == DalgeurakCheckBoxType.dialog && !isOn ? "_blank" : ""}.svg",
+          "assets/images/checkBox${checkBoxType == DalgeurakCheckBoxType.dialog && !isOn ? "_blank" : ""}.svg",
           color: (
             checkBoxType == DalgeurakCheckBoxType.window ?
               (isOn ? dalgeurakBlueOne : dalgeurakGrayTwo) :

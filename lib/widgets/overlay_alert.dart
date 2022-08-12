@@ -105,7 +105,7 @@ class _OverlayAlertWidgetState extends State<_OverlayAlertWidget> with SingleTic
                     Positioned(
                       left: _height * 0.025,
                       child: SvgPicture.asset(
-                        "assets/images/icons/alert.svg",
+                        "assets/images/alert.svg",
                         width: _width * 0.065,
                       ),
                     ),
