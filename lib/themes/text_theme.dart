@@ -34,3 +34,6 @@ final windowTitle_subTitle = TextStyle(
     fontSize: 20, color: Colors.black, fontFamily: 'Pretendard', fontWeight: FontWeight.w400);
 final windowTitle_title = TextStyle(
     fontSize: 26, color: Colors.black, fontFamily: 'Pretendard', fontWeight: FontWeight.w700);
+
+final reasonTextField = TextStyle(
+    fontSize: 15, color: Colors.black, fontFamily: 'Pretendard', fontWeight: FontWeight.w500);
