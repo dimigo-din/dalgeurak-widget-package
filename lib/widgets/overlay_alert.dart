@@ -106,6 +106,7 @@ class _OverlayAlertWidgetState extends State<_OverlayAlertWidget> with SingleTic
                       left: _height * 0.025,
                       child: SvgPicture.asset(
                         "assets/images/alert.svg",
+                        package: "dalgeurak_widget_package",
                         width: _width * 0.065,
                       ),
                     ),

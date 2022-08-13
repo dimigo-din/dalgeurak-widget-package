@@ -44,6 +44,7 @@ class DalgeurakCheckBox extends StatelessWidget {
       children: [
         SvgPicture.asset(
           "assets/images/checkBox${checkBoxType == DalgeurakCheckBoxType.dialog && !isOn ? "_blank" : ""}.svg",
+          package: "dalgeurak_widget_package",
           color: (
             checkBoxType == DalgeurakCheckBoxType.window ?
               (isOn ? dalgeurakBlueOne : dalgeurakGrayTwo) :
