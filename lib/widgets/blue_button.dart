@@ -20,11 +20,11 @@ class BlueButton extends StatelessWidget {
     TextStyle textStyle = isLong ? btnTitle1 : btnTitle2;
 
     return Container(
-      width: _displayWidth * (isSmall ? 0.328 : (isLong ? 0.846 : 0.361)),
-      height: _displayHeight * (isSmall ? 0.039 : 0.06),
+      width: _displayWidth * (isSmall ? 0.234 : (isLong ? 0.846 : 0.361)),
+      height: _displayHeight * (isSmall ? 0.054 : 0.06),
       decoration: BoxDecoration(
         color: isFill ? dalgeurakBlueOne : Colors.white,
-        borderRadius: BorderRadius.circular(isLong ? 15 : 5),
+        borderRadius: BorderRadius.circular(isSmall ? 4 : isLong ? 15 : 5),
         border: Border.all(
           width: isFill ? 2 : 1,
           color: dalgeurakBlueOne,
