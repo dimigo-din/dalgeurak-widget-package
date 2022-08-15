@@ -9,7 +9,8 @@ class BlueButton extends StatelessWidget {
   final bool isLong;
   final bool isSmall;
   final bool isFill;
-  BlueButton({required this.content, required this.isLong, required this.isSmall, required this.isFill});
+  final bool isDisable;
+  BlueButton({required this.content, required this.isLong, required this.isSmall, required this.isFill, required this.isDisable});
 
   @override
   Widget build(BuildContext context) {
@@ -23,15 +24,15 @@ class BlueButton extends StatelessWidget {
       width: _displayWidth * (isSmall ? 0.234 : (isLong ? 0.846 : 0.361)),
       height: _displayHeight * (isSmall ? 0.054 : 0.06),
       decoration: BoxDecoration(
-        color: isFill ? dalgeurakBlueOne : Colors.white,
+        color: isDisable ? dalgeurakGrayTwo : (isFill ? dalgeurakBlueOne : Colors.white),
         borderRadius: BorderRadius.circular(isSmall ? 4 : isLong ? 15 : 5),
         border: Border.all(
           width: isFill ? 2 : 1,
-          color: dalgeurakBlueOne,
+          color: isDisable ? Colors.transparent : dalgeurakBlueOne,
         ),
       ),
       child: Center(
-          child: Text(content, style: (isFill ? textStyle.copyWith(color: Colors.white) : textStyle))),
+          child: Text(content, style: (isDisable ? textStyle.copyWith(color: dalgeurakGrayOne) : (isFill ? textStyle.copyWith(color: Colors.white) : textStyle)))),
     );
   }
 }
