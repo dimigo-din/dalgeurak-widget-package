@@ -23,6 +23,12 @@ final inquiryDialog_emailTitle = TextStyle(
     fontSize: 16, color: dalgeurakGrayFour, fontFamily: 'Pretendard', fontWeight: FontWeight.w500);
 final inquiryDialog_emailAddress = TextStyle(
     fontSize: 14, color: Colors.black, fontFamily: 'Pretendard', fontWeight: FontWeight.w500);
+final listDialog_subTitle = TextStyle(
+    fontSize: 18, color: Colors.black, fontFamily: 'Pretendard', fontWeight: FontWeight.w400);
+final listDialog_title = TextStyle(
+    fontSize: 22, color: Colors.black, fontFamily: 'Pretendard', fontWeight: FontWeight.w700);
+final listDialog_listEmpty = TextStyle(
+    fontSize: 15, color: dalgeurakGrayFour, fontFamily: 'Pretendard', fontWeight: FontWeight.w500);
 final dialogTitle = TextStyle(
     fontSize: 17, color: Colors.black, fontFamily: 'Pretendard', fontWeight: FontWeight.w700);
 final dialogBtn = TextStyle(

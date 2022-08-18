@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 import '../../themes/color_theme.dart';
@@ -202,4 +203,70 @@ class DalgeurakDialog {
       ),
     )
   );
+
+  showList(String subTitle, String title, String contentKind, ListView? listView) {
+    Widget contentWidget;
+
+    if (listView == null) {
+      contentWidget = Positioned(
+        top: Get.height * 0.32,
+        child: Text("$contentKind이(가) 없어요!", style: listDialog_listEmpty),
+      );
+    } else {
+      contentWidget = Positioned(
+        top: Get.height * 0.17,
+        child: SizedBox(
+          width: Get.width * 0.58,
+          height: Get.height * 0.425,
+          child: listView,
+        ),
+      );
+    }
+
+    Get.dialog(
+        Dialog(
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(15))
+          ),
+          child: Container(
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                SizedBox(width: Get.width * 0.851, height: Get.height * 0.67),
+                Positioned(
+                    top: Get.height * 0.05,
+                    left: Get.width * 0.085,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("$subTitle", style: listDialog_subTitle),
+                        SizedBox(height: 4),
+                        Text("$title", style: listDialog_title)
+                      ],
+                    )
+                ),
+                Positioned(
+                    top: Get.height * 0.05,
+                    right: Get.width * 0.085,
+                    child: GestureDetector(
+                        onTap: () => Get.back(),
+                        child: SvgPicture.asset("assets/images/close.svg", package: "dalgeurak_widget_package", width: 20, color: dalgeurakGrayThree)
+                    )
+                ),
+                Positioned(
+                    top: Get.height * 0.137,
+                    child: Container(width: Get.width * 0.64, child: Divider(color: dalgeurakGrayTwo, thickness: 1.0))
+                ),
+                contentWidget,
+                Positioned(
+                  bottom: Get.height * 0.04,
+                  child: Container(width: Get.width * 0.64, child: Divider(color: dalgeurakGrayTwo, thickness: 1.0)),
+                )
+              ],
+            ),
+          ),
+        )
+    );
+  }
 }
