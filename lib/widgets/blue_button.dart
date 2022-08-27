@@ -21,8 +21,8 @@ class BlueButton extends StatelessWidget {
     TextStyle textStyle = isLong ? btnTitle1 : btnTitle2;
 
     return Container(
-      width: (isSmall ? 78 : (isLong ? 330 : 120)),
-      height: (isSmall ? 40 : 44),
+      width: (isSmall ? 78 : (isLong ? 330 : 141)),
+      height: (isSmall ? 40 : 47),
       decoration: BoxDecoration(
         color: isDisable ? dalgeurakGrayTwo : (isFill ? dalgeurakBlueOne : Colors.white),
         borderRadius: BorderRadius.circular(isSmall ? 4 : isLong ? 15 : 5),
