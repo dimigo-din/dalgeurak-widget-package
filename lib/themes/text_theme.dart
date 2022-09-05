@@ -43,3 +43,16 @@ final windowTitle_title = TextStyle(
 
 final reasonTextField = TextStyle(
     fontSize: 15, color: Colors.black, fontFamily: 'Pretendard', fontWeight: FontWeight.w500);
+
+final studentSearchFieldLabel = TextStyle(
+    fontSize: 16, color: Colors.black, fontFamily: 'Pretendard', fontWeight: FontWeight.w400);
+final studentSearchQueryEmptyTitle = TextStyle(
+    fontSize: 18, color: dalgeurakGrayTwo, fontFamily: 'Pretendard', fontWeight: FontWeight.w700);
+final studentSearchQueryEmptySubTitle = TextStyle(
+    fontSize: 14, color: dalgeurakGrayTwo, fontFamily: 'Pretendard', fontWeight: FontWeight.w400);
+final studentSearchListTileStudentId = TextStyle(
+    fontSize: 14, color: dalgeurakGrayFour, fontFamily: 'Pretendard', fontWeight: FontWeight.w600);
+final studentSearchListTileStudentName = TextStyle(
+    fontSize: 16, color: Colors.black, fontFamily: 'Pretendard', fontWeight: FontWeight.w700);
+final studentSearchListTileBtn = TextStyle(
+    fontSize: 14, color: dalgeurakGrayFour, fontFamily: 'Pretendard', fontWeight: FontWeight.w600);

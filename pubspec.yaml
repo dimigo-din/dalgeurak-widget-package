@@ -11,12 +11,15 @@ dependencies:
   flutter:
     sdk: flutter
 
+  dimigoin_flutter_plugin: ^0.4.7
+
   get: ^4.6.5
 
-  flutter_svg: ^0.23.0+1
-
   flutter_vibrate: ^1.3.0
+  korea_regexp: ^0.1.0+1
+  shared_preferences: ^2.0.8
 
+  flutter_svg: ^0.23.0+1
   fluttertoast: ^8.0.9
 
 dev_dependencies:

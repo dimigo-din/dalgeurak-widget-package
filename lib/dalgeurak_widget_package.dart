@@ -1,7 +1,9 @@
 library dalgeurak_widget_package;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
+import 'package:dalgeurak_widget_package/services/shared_preference.dart';
+
+class DalgeurakWidgetPackage {
+  initializeApp() {
+    SharedPreference();
+  }
 }
