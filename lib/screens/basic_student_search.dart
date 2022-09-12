@@ -1,4 +1,5 @@
 import 'package:dalgeurak_widget_package/services/dalgeurak_api.dart';
+import 'package:dalgeurak_widget_package/widgets/student_list_tile.dart';
 import 'package:dimigoin_flutter_plugin/dimigoin_flutter_plugin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -65,31 +66,20 @@ abstract class BasicStudentSearch extends SearchDelegate {
     itemBuilder: (context, index) {
       DimigoinUser selectStudent = suggestionList[index];
 
-      return ListTile(
-        title: Text(selectStudent.studentId.toString(), style: studentSearchListTileStudentId),
-        subtitle: Text(selectStudent.name!, style: studentSearchListTileStudentName),
-        leading: SizedBox(
-          width: Get.width * 0.1,
-          height: Get.width * 0.1,
-          child: Column(
-            children: [
-              SizedBox(height: Get.height * 0.0115),
-              SvgPicture.asset('assets/images/user.svg', package: "dalgeurak_widget_package", width: Get.width * 0.07),
-            ],
-          ),
-        ),
-        trailing: GestureDetector(
-            onTap: studentBtnOnClick(selectStudent),
-            child: Obx(() => Container(
-              width: Get.width * 0.15,
-              height: Get.height * 0.045,
-              decoration: BoxDecoration(
-                  color: studentListTileBtnColor[selectStudent.id],
-                  borderRadius: BorderRadius.circular(5)
-              ),
-              child: Center(child: Text(studentListTileBtnLabel, style: studentSearchListTileBtn.copyWith(color: studentListTileBtnTextColor[selectStudent.id]))),
-            ))
-        ),
+      return StudentListTile(
+          selectStudent: selectStudent,
+          trailingWidget: GestureDetector(
+              onTap: studentBtnOnClick(selectStudent),
+              child: Obx(() => Container(
+                width: Get.width * 0.15,
+                height: Get.height * 0.045,
+                decoration: BoxDecoration(
+                    color: studentListTileBtnColor[selectStudent.id],
+                    borderRadius: BorderRadius.circular(5)
+                ),
+                child: Center(child: Text(studentListTileBtnLabel, style: studentSearchListTileBtn.copyWith(color: studentListTileBtnTextColor[selectStudent.id]))),
+              ))
+          )
       );
     },
   );
