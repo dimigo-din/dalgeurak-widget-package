@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  dimigoin_flutter_plugin: ^0.4.7
+  dimigoin_flutter_plugin: ^0.4.9
 
   get: ^4.6.5
 

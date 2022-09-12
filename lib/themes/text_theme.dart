@@ -56,3 +56,8 @@ final studentSearchListTileStudentName = TextStyle(
     fontSize: 16, color: Colors.black, fontFamily: 'Pretendard', fontWeight: FontWeight.w700);
 final studentSearchListTileBtn = TextStyle(
     fontSize: 14, color: dalgeurakGrayFour, fontFamily: 'Pretendard', fontWeight: FontWeight.w600);
+
+final choiceUserContainerName = TextStyle(
+    fontSize: 12, color: Colors.black, fontFamily: 'Pretendard', fontWeight: FontWeight.w600);
+final choiceUserContainerId = TextStyle(
+    fontSize: 10, color: dalgeurakGrayFour, fontFamily: 'Pretendard', fontWeight: FontWeight.w600);

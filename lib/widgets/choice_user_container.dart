@@ -1,0 +1,52 @@
+import 'package:dalgeurak_widget_package/themes/color_theme.dart';
+import 'package:dimigoin_flutter_plugin/dimigoin_flutter_plugin.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+
+import '../themes/text_theme.dart';
+
+
+class ChoiceUserContainer extends StatelessWidget {
+  DimigoinUser choiceUser;
+  List<DimigoinUser> choiceUserList;
+  void Function()? onClick;
+  ChoiceUserContainer({required this.choiceUser, required this.choiceUserList, required this.onClick});
+
+  @override
+  Widget build(BuildContext context) {
+
+    return GestureDetector(
+      onTap: onClick,
+      child: Container(
+        width: 44,
+        height: 75,
+        decoration: BoxDecoration(
+          color: Colors.transparent
+        ),
+        margin: const EdgeInsets.only(left: 18),
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Positioned(
+              top: 0,
+              right: 0,
+              child: Icon(Icons.cancel_rounded, color: dalgeurakGrayFour, size: 16),
+            ),
+            Positioned(
+              left: 0,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SvgPicture.asset('assets/images/user.svg', package: "dalgeurak_widget_package", width: 36),
+                  SizedBox(height: 4),
+                  Text("${choiceUser.studentId}", style: choiceUserContainerId),
+                  Text("${choiceUser.name}", style: choiceUserContainerName),
+                ],
+              ),
+            )
+          ],
+        )
+      ),
+    );
+  }
+}
