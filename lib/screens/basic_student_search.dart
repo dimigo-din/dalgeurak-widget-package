@@ -96,10 +96,10 @@ abstract class BasicStudentSearch extends SearchDelegate {
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    DalgeurakAPI _dalgeurakAPI = DalgeurakAPI();
+    DalgeurakStudentListAPI _dalgeurakStudentListAPI = DalgeurakStudentListAPI();
 
     return FutureBuilder(
-        future: _dalgeurakAPI.getStudentList(false),
+        future: _dalgeurakStudentListAPI.getStudentList(false),
         builder: (BuildContext context, AsyncSnapshot snapshot) {
           if (snapshot.hasData) {
             _studentList = List<DimigoinUser>.from(snapshot.data);

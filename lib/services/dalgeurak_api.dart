@@ -4,7 +4,7 @@ import 'package:dalgeurak_widget_package/services/shared_preference.dart';
 import 'package:dalgeurak_widget_package/widgets/toast.dart';
 import 'package:dimigoin_flutter_plugin/dimigoin_flutter_plugin.dart';
 
-class DalgeurakAPI {
+class DalgeurakStudentListAPI {
   DalgeurakService _dalgeurakService = DalgeurakService();
   DalgeurakToast _dalgeurakToast = DalgeurakToast();
   DateTime nowTime = DateTime.now();
