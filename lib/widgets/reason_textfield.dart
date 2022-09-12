@@ -8,7 +8,8 @@ class ReasonTextField extends StatelessWidget {
   final String hintText;
   final TextEditingController textController;
   final bool isBig;
-  ReasonTextField({required this.hintText, required this.textController, required this.isBig});
+  final bool isEnable;
+  ReasonTextField({required this.hintText, required this.textController, required this.isBig, required this.isEnable});
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +21,7 @@ class ReasonTextField extends StatelessWidget {
         borderRadius: BorderRadius.circular(5),
       ),
       child: TextField(
+        enabled: isEnable,
         keyboardType: TextInputType.multiline,
         maxLines: null,
         controller: textController,
