@@ -92,7 +92,7 @@ abstract class MultipleStudentChoice extends BasicStudentSearch {
                             return Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                ChoiceUserContainer(choiceUser: selectUser, choiceUserList: selectStudentList, onClick: studentBtnOnClick(selectUser)),
+                                ChoiceUserContainer(choiceUser: selectUser, choiceUserList: selectStudentList, isSearchPage: true, onClick: studentBtnOnClick(selectUser)),
                               ],
                             );
                           }

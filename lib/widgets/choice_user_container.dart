@@ -9,8 +9,9 @@ import '../themes/text_theme.dart';
 class ChoiceUserContainer extends StatelessWidget {
   DimigoinUser choiceUser;
   List<DimigoinUser> choiceUserList;
+  bool isSearchPage;
   void Function()? onClick;
-  ChoiceUserContainer({required this.choiceUser, required this.choiceUserList, required this.onClick});
+  ChoiceUserContainer({required this.choiceUser, required this.choiceUserList, required this.isSearchPage, required this.onClick});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class ChoiceUserContainer extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.transparent
         ),
-        margin: const EdgeInsets.only(left: 18),
+        margin: EdgeInsets.only(left: (choiceUserList.indexOf(choiceUser) != 0 ? 18 : (isSearchPage ? 18 : 0))),
         child: Stack(
           alignment: Alignment.center,
           children: [
