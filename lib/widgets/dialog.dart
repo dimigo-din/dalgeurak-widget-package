@@ -1,3 +1,6 @@
+import 'package:dalgeurak_widget_package/widgets/blue_button.dart';
+import 'package:dalgeurak_widget_package/widgets/oneline_textfield.dart';
+import 'package:dalgeurak_widget_package/widgets/reason_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -7,6 +10,7 @@ import '../../themes/text_theme.dart';
 import 'checkbox.dart';
 
 class DalgeurakDialog {
+  TextEditingController textFieldDialogFieldController = TextEditingController();
   RxBool isNoticeDialogNeverShow = false.obs;
 
   showWarning(String message, String subMessage, dynamic executeFunc) {
@@ -141,6 +145,42 @@ class DalgeurakDialog {
                 ),
               )
             ],
+          ),
+        ),
+      )
+  );
+
+  showTextField(Function(String reasonText) executeFunc) => Get.dialog(
+      Dialog(
+        backgroundColor: Colors.transparent,
+        child: SizedBox(
+          height: Get.height * 0.22,
+          child: Container(
+            decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(Radius.circular(16))
+            ),
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Positioned(
+                  top: Get.height * 0.03,
+                  left: 24,
+                  child: Text("거절 사유", style: dialogTitle),
+                ),
+                Positioned(
+                  top: Get.height * 0.072,
+                  child: Center(child: OneLineTextField(hintText: "거절 사유를 입력해주세요.", textController: textFieldDialogFieldController, isEnable: true, isSmall: true))
+                ),
+                Positioned(
+                  bottom: Get.height * 0.025,
+                  child: GestureDetector(
+                    onTap: () => executeFunc,
+                    child: BlueButton(content: "확인", isLong: false, isSmall: false, isFill: true, isDisable: false)
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       )

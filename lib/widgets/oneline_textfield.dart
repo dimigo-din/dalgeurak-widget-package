@@ -8,12 +8,15 @@ class OneLineTextField extends StatelessWidget {
   final String hintText;
   final TextEditingController textController;
   final bool isEnable;
-  OneLineTextField({required this.hintText, required this.textController, required this.isEnable});
+  bool? isSmall;
+  OneLineTextField({required this.hintText, required this.textController, required this.isEnable, this.isSmall});
 
   @override
   Widget build(BuildContext context) {
+    isSmall ??= false;
+
     return Container(
-      width: 300,
+      width: isSmall! ? 270 : 300,
       height: 40,
       decoration: BoxDecoration(
         border: Border.all(color: dalgeurakGrayTwo, width: 1),
