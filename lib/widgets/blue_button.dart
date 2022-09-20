@@ -8,21 +8,20 @@ class BlueButton extends StatelessWidget {
   final String content;
   final bool isLong;
   final bool isSmall;
+  bool? isTiny;
   final bool isFill;
   final bool isDisable;
-  BlueButton({required this.content, required this.isLong, required this.isSmall, required this.isFill, required this.isDisable});
+  BlueButton({required this.content, required this.isLong, required this.isSmall, required this.isFill, required this.isDisable, this.isTiny});
 
   @override
   Widget build(BuildContext context) {
-    double _displayWidth = MediaQuery.of(context).size.width;
-    double _displayHeight = MediaQuery.of(context).size.height;
+    isTiny ??= false;
 
-
-    TextStyle textStyle = isLong ? btnTitle1 : btnTitle2;
+    TextStyle textStyle = (isTiny! ? btnTitle1.copyWith(fontWeight: FontWeight.w600) : (isLong ? btnTitle1 : btnTitle2));
 
     return Container(
-      width: (isSmall ? 78 : (isLong ? 330 : 141)),
-      height: (isSmall ? 40 : 47),
+      width: (isTiny! ? 55 : (isSmall ? 78 : (isLong ? 330 : 141))),
+      height: (isTiny! ? 33 : (isSmall ? 40 : 47)),
       decoration: BoxDecoration(
         color: isDisable ? dalgeurakGrayTwo : (isFill ? dalgeurakBlueOne : Colors.white),
         borderRadius: BorderRadius.circular(isSmall ? 4 : isLong ? 15 : 5),
