@@ -67,6 +67,7 @@ abstract class BasicStudentSearch extends SearchDelegate {
       DimigoinUser selectStudent = suggestionList[index];
 
       return StudentListTile(
+          isGroupTile: false,
           selectStudent: selectStudent,
           trailingWidget: GestureDetector(
               onTap: studentBtnOnClick(selectStudent),

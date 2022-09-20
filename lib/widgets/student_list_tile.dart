@@ -6,15 +6,17 @@ import 'package:get/get.dart';
 import '../../themes/text_theme.dart';
 
 class StudentListTile extends StatelessWidget {
+  bool isGroupTile;
   DimigoinUser selectStudent;
+  int? groupStudentAmount;
   Widget trailingWidget;
-  StudentListTile({required this.selectStudent, required this.trailingWidget});
+  StudentListTile({required this.isGroupTile, required this.selectStudent, this.groupStudentAmount, required this.trailingWidget});
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
       title: Text(selectStudent.studentId.toString(), style: studentSearchListTileStudentId),
-      subtitle: Text(selectStudent.name!, style: studentSearchListTileStudentName),
+      subtitle: Text("${selectStudent.name!}${isGroupTile ? " 외 $groupStudentAmount명" : ""}", style: studentSearchListTileStudentName),
       leading: SizedBox(
         width: Get.width * 0.1,
         height: Get.width * 0.1,
