@@ -23,7 +23,7 @@ class StudentListTile extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: Get.height * 0.0115),
-            SvgPicture.asset('assets/images/user.svg', package: "dalgeurak_widget_package", width: Get.width * 0.07),
+            SvgPicture.asset('assets/images/user.svg', package: "dalgeurak_widget_package", width: 24),
           ],
         ),
       ),
