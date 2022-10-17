@@ -55,9 +55,9 @@ abstract class BasicStudentSearch extends SearchDelegate {
 
   String studentListTileBtnLabel = "관리";
 
-  RxMap<String, Color> studentListTileBtnColor = ({}.cast<String, Color>()).obs;
+  RxMap<int, Color> studentListTileBtnColor = ({}.cast<int, Color>()).obs;
 
-  RxMap<String, Color> studentListTileBtnTextColor = ({}.cast<String, Color>()).obs;
+  RxMap<int, Color> studentListTileBtnTextColor = ({}.cast<int, Color>()).obs;
 
   void Function()? studentBtnOnClick(DimigoinUser selectStudent);
 
