@@ -15,7 +15,7 @@ class StudentListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text(selectStudent.studentId.toString(), style: studentSearchListTileStudentId),
+      title: Text("${selectStudent.gradeNum}학년 ${selectStudent.classNum}반", style: studentSearchListTileStudentId),
       subtitle: Text("${selectStudent.name!}${isGroupTile ? " 외 $groupStudentAmount명" : ""}", style: studentSearchListTileStudentName),
       leading: SizedBox(
         width: Get.width * 0.1,
