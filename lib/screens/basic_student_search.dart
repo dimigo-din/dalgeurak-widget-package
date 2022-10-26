@@ -117,7 +117,7 @@ abstract class BasicStudentSearch extends SearchDelegate {
                       ),
                       SizedBox(height: Get.height * 0.02),
                       Text(
-                        "학생 이름(유도희 or ㅇㄷㅎ)을 직접 입력하거나,\n각 학생의 학번(2321)으로 찾을 수도 있어요",
+                        "학생 이름(ex: 유*희 or ㅇ*ㅎ)을 직접 입력하거나,\n각 학생의 학번(ex: 2300)으로 찾을 수도 있어요\n\n\n개인정보 보호로 인해 예시처럼 이름 가운데엔 *표시가,\n학생 번호는 00으로 가림처리 됩니다.\n이에 유의하면서 검색을 진행해주세요!",
                         style: studentSearchQueryEmptySubTitle,
                         textAlign: TextAlign.center,
                       )
