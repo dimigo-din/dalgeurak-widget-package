@@ -14,7 +14,7 @@ class DalgeurakStudentListAPI {
     int weekFirstDay = (nowTime.day - (nowTime.weekday - 1));
 
     if (isMust || stringData == null || (json.decode(stringData))["weekFirstDay"] != _dalgeurakService.getCorrectDate(weekFirstDay)['day']) {
-      Map data = await _dalgeurakService.getAllStudentList();
+      Map data = await _dalgeurakService.getAllStudentListInDimigoin();
 
       if (data['success']) {
         SharedPreference().saveStudentList({"studentList": data['content'], "weekFirstDay":  _dalgeurakService.getCorrectDate(weekFirstDay)['day']});
