@@ -40,7 +40,7 @@ class ChoiceUserContainer extends StatelessWidget {
                 children: [
                   SvgPicture.asset('assets/images/user.svg', package: "dalgeurak_widget_package", width: 36),
                   SizedBox(height: 4),
-                  Text("${choiceUser.studentId}", style: choiceUserContainerId),
+                  Text("${choiceUser.gradeNum}학년 ${choiceUser.classNum}반", style: choiceUserContainerId),
                   Text("${choiceUser.name}", style: choiceUserContainerName),
                 ],
               ),
