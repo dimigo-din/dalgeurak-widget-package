@@ -1,3 +1,4 @@
+import 'package:dalgeurak_widget_package/services/check_text_validate.dart';
 import 'package:dalgeurak_widget_package/services/dalgeurak_api.dart';
 import 'package:dalgeurak_widget_package/widgets/student_list_tile.dart';
 import 'package:dimigoin_flutter_plugin/dimigoin_flutter_plugin.dart';
@@ -156,22 +157,46 @@ abstract class BasicStudentSearch extends SearchDelegate {
   }
 
   changeSearchTerm(String text) {
-    RegExp regExp = getRegExp(
-        text,
-        RegExpOptions(
-          initialSearch: true,
-          startsWith: false,
-          endsWith: false,
-          fuzzy: false,
-          ignoreSpace: false,
-          ignoreCase: false,
-        )
+    RegExpOptions expOptions = RegExpOptions(
+      initialSearch: true,
+      startsWith: false,
+      endsWith: false,
+      fuzzy: false,
+      ignoreSpace: false,
+      ignoreCase: false,
     );
 
-    List<DimigoinUser> result = [];
-    result.addAll(_studentList.where((element) => regExp.hasMatch(element.name as String)).toList());
-    result.addAll(_studentList.where((element) => regExp.hasMatch(element.studentId.toString())).toList());
+    RegExp regExp;
+    String searchText = "";
+    if (CheckTextValidate().validateIsOnlyHangeulStr(text) && text.length > 1) {
+      switch (text.length) {
+        case 2:
+          searchText = "신*${text[1]}";
+          break;
+        case 3:
+          searchText = "${text[0]}*${text[2]}";
+          break;
+        case 4:
+          searchText = "${text.substring(0, 2)}*${text[3]}";
+          break;
+        default:
+          searchText = text;
+      }
 
+      regExp = getRegExp(
+          searchText,
+          expOptions
+      );
+    } else {
+      regExp = getRegExp(
+          text,
+          expOptions
+      );
+    }
+
+    List<DimigoinUser> result = [];
+    result.addAll(_studentList.where((element) => (regExp.hasMatch(element.name as String) || element.name == searchText)).toList());
+    result.addAll(_studentList.where((element) => regExp.hasMatch(element.studentId.toString())).toList());
 
     return result;
   }
